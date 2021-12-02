@@ -1,12 +1,6 @@
-const readFile = require("../util/inputReader.js")
+const transformInputToArray = require("../util/transformInputToArray");
 
-const inputs = readFile("./input.txt");
-const data = []
-for (let i = 0; i < inputs.length; i++) {
-	const input = inputs.readLine();
-	if (!input) break;
-	data.push(input)
-}
+const data = transformInputToArray("input.txt");
 
 /**
  * 1. Count the number of times a depth measurement increases from the previous measurement. (There is no measurement before the first measurement
