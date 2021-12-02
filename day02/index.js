@@ -40,15 +40,13 @@ function SubmarineAim() {
 	return Object.freeze({
 		forward: (speed) => {
 			x += speed;
+			depth += aim * speed
 		},
 		up: (speed) => aim -= speed,
 		down: (speed) => aim += speed,
 		getX: () => x,
 		getDepth: () => depth,
-		getXDepth: () => x * depth,
-		tick: (value) => {
-			depth += aim * value;
-		}
+		getXDepth: () => x * depth
 	})
 }
 
@@ -74,7 +72,6 @@ function SubmarineController(commands, submarine) {
 		switch (com) {
 			case "forward":
 				sub.forward(value);
-				sub.tick && sub.tick(value);
 				break;
 			case "up":
 				sub.up(value);
