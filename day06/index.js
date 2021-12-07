@@ -18,7 +18,6 @@ function tick(lanternFish) {
 }
 
 function tick_two(lanternFish, iterations) {
-	const max = lanternFish.reduce((acc, curr) => Math.max(acc,curr),0);
 	const fishCount = Array.from(Array(9), () => 0);
 	lanternFish.forEach(fish => {
 		fishCount[fish] ++;
